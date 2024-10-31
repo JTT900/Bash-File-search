@@ -1,11 +1,23 @@
 #!/bin/bash
 
+# Script name for usage message
+readonly SCRIPT_NAME=${0##*/}
+
+# Displays usage help of script
+usage() {
+  cat <<USAGE
+Usage: ${SCRIPT_NAME}
+Type a file name to see if it exists.
+USAGE
+}
+
+# Prompts user to type file name
 echo "Type a file name to see if it exists"
 read -r filename
 
 # Checks if argument passed, if not exits script
 if [[ $# -ne 1 ]]; then
-  echo "No arguments passed."
+  usage
   exit 1
 fi
 
@@ -18,4 +30,4 @@ else
 	echo "$filename does not exist"
 fi
 
-exit 0
+exit 0;

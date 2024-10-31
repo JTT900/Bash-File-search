@@ -7,6 +7,7 @@ read filename
 if [[ $# -ne 1 ]]; then
   echo "No arguments passed."
   exit 1
+fi
 
 
 # Checks if file typed exists

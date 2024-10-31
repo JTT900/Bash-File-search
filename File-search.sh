@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Type a file name to see if it exists"
-read filename
+read -r filename
 
 # Checks if argument passed, if not exits script
 if [[ $# -ne 1 ]]; then
@@ -12,7 +12,8 @@ fi
 
 # Checks if file typed exists
 if [[ -f "$filename" ]] ; then
-	echo "$filename exists"
+	echo "$filename exists at path:"
+	realpath "$filename"
 else
 	echo "$filename does not exist"
 fi
